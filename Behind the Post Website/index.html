@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behind the Post</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#" onclick="showPage('home')">
+    </span> Behind the Post
+      </a>
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" class="nav-link" data-page="tactics" onclick="showPage('tactics')">Tactics</a></li>
+        <li><a href="#" class="nav-link" data-page="resources" onclick="showPage('resources')">Resources</a></li>
+        <li><a href="#" class="nav-link" data-page="resources" onclick="showPage('about')">About</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="#" onclick="showPage('home'); closeMenu()">Home</a></li>
+      <li><a href="#" onclick="showPage('tactics'); closeMenu()">Tactics</a></li>
+      <li><a href="#" onclick="showPage('resources'); closeMenu()">Resources</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME PAGE -->
+  <main id="page-home" class="page active">
+
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="grid-lines"></div>
+        <div class="floating-tag tag1">#Misinformation</div>
+        <div class="floating-tag tag2">#Algorithm</div>
+        <div class="floating-tag tag3">#Astroturfing</div>
+        <div class="floating-tag tag4">#EchoChamber</div>
+        <div class="floating-tag tag5">#ViralManipulation</div>
+      </div>
+      <div class="hero-content">
+        <div class="eyebrow">Media Literacy Project</div>
+        <h1 class="hero-title">
+          What's <em>really</em><br />happening
+          <span class="underline-accent">behind the post?</span>
+        </h1>
+        <p class="hero-sub">
+          Decoding the hidden tactics used by political parties, brands, and everyday
+          users to shape opinion, manufacture consensus, and game the algorithm.
+        </p>
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="showPage('tactics')">Explore Tactics</button>
+          <button class="btn-ghost" onclick="showPage('resources')">View Resources</button>
+        </div>
+      
