@@ -1,12 +1,14 @@
-
 // ---- Page Routing ----
 function showPage(pageId) {
+  // Only navigate if the page exists
+  const target = document.getElementById('page-' + pageId);
+  if (!target) return;
+
   // Hide all pages
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
 
   // Show target page
-  const target = document.getElementById('page-' + pageId);
-  if (target) target.classList.add('active');
+  target.classList.add('active');
 
   // Update nav active state
   document.querySelectorAll('.nav-link').forEach(link => {
@@ -136,3 +138,30 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+// ---- Resources Filtering ----
+function filterResources(category, btn) {
+  document.querySelectorAll('.res-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.querySelectorAll('.res-card').forEach(card => {
+    if (category === 'all' || card.dataset.resCategory === category) {
+      card.classList.remove('hidden');
+      card.style.animation = 'none';
+      void card.offsetWidth;
+      card.style.animation = 'fadeInUp 0.35s ease forwards';
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+
+// ---- Mobile menu ----
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  if (menu) menu.classList.toggle('open');
+}
+
+function closeMenu() {
+  const menu = document.getElementById('mobileMenu');
+  if (menu) menu.classList.remove('open');
+}

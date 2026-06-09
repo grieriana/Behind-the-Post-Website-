@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,23 +13,23 @@
   <!-- NAV -->
   <nav class="nav" id="navbar">
     <div class="nav-inner">
-      <a class="nav-logo" href="#" onclick="showPage('home')">
+      <a class="nav-logo" href="#" onclick="showPage('home', event)">
     </span> Behind the Post
       </a>
       <ul class="nav-links">
-        <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home')">Home</a></li>
-        <li><a href="#" class="nav-link" data-page="tactics" onclick="showPage('tactics')">Tactics</a></li>
-        <li><a href="#" class="nav-link" data-page="resources" onclick="showPage('resources')">Resources</a></li>
-        <li><a href="#" class="nav-link" data-page="resources" onclick="showPage('about')">About</a></li>
+        <li><a href="javascript:void(0)" class="nav-link active" data-page="home" onclick="showPage('home')">Home</a></li>
+        <li><a href="javascript:void(0)" class="nav-link" data-page="tactics" onclick="showPage('tactics')">Tactics</a></li>
+        <li><a href="javascript:void(0)" class="nav-link" data-page="resources" onclick="showPage('resources')">Resources</a></li>
+        <li><a href="javascript:void(0)" class="nav-link" data-page="about" onclick="showPage('about')">About</a></li>
       </ul>
       <button class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
     </div>
     <ul class="mobile-menu" id="mobileMenu">
-      <li><a href="#" onclick="showPage('home'); closeMenu()">Home</a></li>
-      <li><a href="#" onclick="showPage('tactics'); closeMenu()">Tactics</a></li>
-      <li><a href="#" onclick="showPage('resources'); closeMenu()">Resources</a></li>
+      <li><a href="#" onclick="showPage('home', event); closeMenu()">Home</a></li>
+      <li><a href="#" onclick="showPage('tactics', event); closeMenu()">Tactics</a></li>
+      <li><a href="#" onclick="showPage('resources', event); closeMenu()">Resources</a></li>
     </ul>
   </nav>
 
@@ -58,4 +59,218 @@
           <button class="btn-primary" onclick="showPage('tactics')">Explore Tactics</button>
           <button class="btn-ghost" onclick="showPage('resources')">View Resources</button>
         </div>
-      
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RESOURCES PAGE -->
+  <div id="page-resources" class="page">
+
+    <section class="res-hero">
+      <div class="container">
+        <div class="eyebrow" style="color:rgba(255,255,255,0.45);">Reading List</div>
+        <h1 class="res-hero-title">Further Reading</h1>
+        <p class="res-hero-sub">
+          Books, papers, and essays on memes, AI imagery, memetic warfare, and the politics of viral media.
+        </p>
+        <div class="res-filters">
+          <button class="res-filter-btn active" onclick="filterResources('all', this)">All</button>
+          <button class="res-filter-btn" onclick="filterResources('memes', this)">Memes &amp; Culture</button>
+          <button class="res-filter-btn" onclick="filterResources('ai', this)">AI &amp; Imagery</button>
+          <button class="res-filter-btn" onclick="filterResources('warfare', this)">Memetic Warfare</button>
+          <button class="res-filter-btn" onclick="filterResources('modern-politics', this)">Modern Politics</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="res-list-section">
+      <div class="container">
+        <div class="res-grid" id="resGrid">
+
+          <!-- 1 -->
+          <article class="res-card" data-res-category="warfare">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-warfare">Memetic Warfare</span>
+              </div>
+              <h2 class="res-title">The Meme-ification of Warfare </h2>
+              <p class="res-author">Samantha Peacock</p>
+              <p class="res-desc">Key Quote "Memes function like modern-day propaganda posters—they carry strategic, targeted messages intended to manipulate or mislead users. Though often dismissed as harmless jokes, memes frequently contain coded messages and strategic framing beneath the humor. Repeated exposure to such propagandistic memes can distort reality, normalize aggression, and reinforce power imbalances. As a result, previously unacceptable ideas begin to feel commonplace, which reduces critical scrutiny of their meaning and impact."</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Paper</span>
+                <a class="res-link" href="https://moritzlaw.osu.edu/sites/default/files/2026-04/Sam%20Peacock%20Blog.pdf" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="res-card" data-res-category="memes">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-memes">Memes &amp; Culture</span>
+              </div>
+              <h2 class="res-title">The Function of Memes in Political Discourse</h2>
+              <p class="res-author">Glenn Anderau and Daniel Barbarrusa</p>
+              <p class="res-desc">The use of memes has become increasingly widespread in political discourse. However, there is a dearth of philosophical
+discussion on memes and their impact on political discourse. This paper addresses this gap in the literature and bridges the
+divide between the empirical and philosophical work on memes by offering a functionalist account which allows for a more
+in-depth analysis of the role memes play in political discourse.</p>
+              <div class="res-footer">
+                <span class="res-type">Acedmic Paper</span>
+                <a class="res-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11685264/" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2025</span>
+              </div>
+              <h2 class="res-title">Green party surging as Polanski’s social media strategy woos the young </h2>
+              <p class="res-author">Rachael Healy</p>
+              <p class="res-desc">Green Party membership has more than doubled, driven in part by its platform messaging on apps like TikTok</p>
+              <div class="res-footer">
+                <span class="res-type">Article</span>
+                <a class="res-link" href="https://observer.co.uk/news/politics/article/green-party-surging-as-polanskis-social-media-strategy-woos-the-young" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="res-card" data-res-category="ai">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-ai">AI &amp; Imagery</span>
+              </div>
+              <h2 class="res-title">Memes vs. Machines
+Comparison of AI-generated Images vs. Traditional
+Memes in Right-Wing Social Media Discourse</h2>
+              <p class="res-author">Alex Petruk</p>
+              <p class="res-desc">Comparison of AI-generated Images vs. Traditional
+
+Memes in Right-Wing Social Media Discourse</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Reading</span>
+                <a class="res-link" href="https://crossingsjournal.ca/index.php/crossings/article/view/324/119" target="_blank" rel="noopener">Learn more →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5 -->
+           <article class="res-card" data-res-category="warfare">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-warfare">Memetic Warfare</span>
+                <span class="res-year">2006</span>
+              </div>
+              <h2 class="res-title">In Evolutionary Psychology, Memes and the Origin of War, 2006</h2>
+              <p class="res-author">Keith Henson</p>
+              <p class="res-desc"> This paper combines evolutionary psychology and memetics to explain war as a species-typical behavior rooted in humanity's Stone Age past. Henson argues that population growth leading to resource scarcity—what he calls "looming privation"—activates an evolved behavioral "switch." This switch increases the spread of xenophobic or warlike memes (cultural ideas, beliefs), which synchronize groups to launch coordinated attacks on neighboring tribes.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Reading</span>
+                <a class="res-link" href="https://mitpress.mit.edu/9780262525435/memes-in-digital-culture/" target="_blank" rel="noopener">Find it →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="res-card" data-res-category="warfare">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-warfare">Memetic Warfare</span>
+                 <span class="res-year">2005</span>
+              </div>
+              <h2 class="res-title">Memetics: A Growth Industry in US Military Operations</h2>
+              <p class="res-author">Michael Prosse</p>
+              <p class="res-desc">The paper argues that future warfare must be fought in the "ideological spheres" of enemies and the undecided. It advocates for "weaponeering" memes—treating cultural ideas as transmittable units—as a primary tool to win this metaphysical fight, moving beyond traditional Information Operations (IO) and Psychological Operations (PsyOps)</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Paper</span>
+                <a class="res-link" href="https://apps.dtic.mil/sti/pdfs/ADA507172.pdf" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="res-card" data-res-category="ai">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-ai">AI &amp; Imagery</span>
+                <span class="res-year">2025</span>
+              </div>
+              <h2 class="res-title">The resonant slop machine: public diplomacy and strategic narratives
+in the age of artificial intelligence</h2>
+              <p class="res-author">Rhys Crilley1 and Robert A. Saunders</p>
+              <p class="res-desc">What does the rise of generative Artificial Intelligence and meme-driven political communication mean for public diplo-
+macy and strategic narratives? Using Donald Trump’s AI-generated “King Trump” fighter jet video (posted during the
+2025 “No Kings” protests) as a jumping off point, we explore how AI slop and “shitposting” destabilize the communi-
+cative foundations of public diplomacy and international order.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Paper</span>
+                <a class="res-link" href="https://link.springer.com/article/10.1057/s41254-025-00419-z" target="_blank" rel="noopener">Read it</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2016</span>
+              </div>
+              <h2 class="res-title">Zack Polanski is Britain’s first digital-native party leader</h2>
+              <p class="res-author"></p>
+              <p class="res-desc">A globe-spanning investigation into 21st-century information warfare — from Russian troll farms to Filipino Facebook armies. Pomerantsev shows how modern disinformation doesn't seek to convince, but to overwhelm: flooding the zone with noise until truth becomes unnavigable.</p>
+              <div class="res-footer">
+                <span class="res-type">Article</span>
+                <a class="res-link" href="https://www.economist.com/britain/2026/04/28/zack-polanski-is-britains-first-digital-native-party-leader" target="_blank" rel="noopener">Find it →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="res-card" data-res-category="memes">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-memes">Memes &amp; Culture</span>
+                <span class="res-year">2021</span>
+              </div>
+              <h2 class="res-title">Messy on the inside: internet memes as mapping tools of everyday life</h2>
+              <p class="res-author">Sulafa Zidani </p>
+              <p class="res-desc">This paper presents the first systematic analysis of memes created by Palestinians in Israel. An analysis of 150 memes reveals how memes are used to reflect on and intervene in Palestinian youths’ navigation of life in mixed cities under prolonged war and colonialism. I analyze these memes at three different levels: global popular culture and politics, in relation to the Israeli State, and Palestinian in-group dynamics.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Paper</span>
+                <a class="res-link" href="https://www.tandfonline.com/doi/full/10.1080/1369118X.2021.1974519#abstract" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="res-card" data-res-category="warfare">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-warfare">Memetic Warfare</span>
+              </div>
+              <h2 class="res-title">It's time to embrace memetic warfare</h2>
+              <p class="res-author">Jeff Giesea</p>
+              <p class="res-desc"> ‘The best way to counter ISIS is to unleash an army of trolls on them’, Charles C. Johnson joked over beers last spring. ‘I could totally mess with their recruiting and propaganda.’ Johnson is known as one of the Internet’s biggest trolls, the social media equivalent of an annoying gadfly or guerrilla warrior, depending on one’s perspective. He’s been banned from Twitter and is alleged to have spearheaded the rumors that triggered the downfall of the all-but-certain Speaker of the House of Representatives, third in line for the American presidency.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Reading</span>
+                <a class="res-link" href="https://stratcomcoe.org/cuploads/pfiles/jeff_gisea.pdf" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /res-grid -->
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
