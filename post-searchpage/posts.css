@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #1c1917;
+  color: white;
+  font-family: 'Inter', Arial, sans-serif;
+  min-height: 100vh;
+
+  background-image:
+    linear-gradient(rgba(245, 200, 66, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 200, 66, 0.06) 1px, transparent 1px);
+  background-size: 70px 70px;
+}
+
+.page-wrapper {
+  width: min(1240px, 92vw);
+  margin: 0 auto;
+  padding: 44px 0 80px;
+}
+
+.back-link {
+  display: inline-block;
+  color: #f5c842;
+  font-weight: 800;
+  text-decoration: none;
+  margin-bottom: 50px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.tactic-header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+#tacticTitle {
+  margin: 0 0 14px;
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 900;
+}
+
+#tacticDescription {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.search-filter-section {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 220px 220px;
+  gap: 18px;
+  align-items: start;
+  margin: 0 auto 28px;
+  max-width: 980px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+#postSearchInput {
+  width: 100%;
+  height: 54px;
+  border: none;
+  outline: none;
+  border-radius: 999px;
+  padding: 0 48px 0 24px;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#postSearchInput::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.search-icon {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f5c842;
+  font-weight: 900;
+}
+
+.filter-dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 999px;
+  padding: 0 24px;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-button span {
+  color: #f5c842;
+}
+
+.dropdown-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 62px;
+  left: 0;
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  background: #29231f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 30;
+}
+
+.filter-dropdown.open .dropdown-menu {
+  display: grid;
+  gap: 10px;
+}
+
+.dropdown-menu label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#activeFilters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.active-filter-pill {
+  border: 1px solid rgba(245, 200, 66, 0.45);
+  background: rgba(245, 200, 66, 0.14);
+  color: #f5c842;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* THIS IS THE MAIN FIX */
+#postGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.post-card {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(245, 200, 66, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.post-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.post-card-content {
+  padding: 18px;
+}
+
+.post-card h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.post-card p {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 800;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.tag-pill.ai-media {
+  color: #f5c842;
+  border-color: rgba(245, 200, 66, 0.45);
+  background: rgba(245, 200, 66, 0.13);
+}
+
+.tag-pill.real-media {
+  color: #9fd8dc;
+  border-color: rgba(125, 179, 184, 0.5);
+  background: rgba(125, 179, 184, 0.14);
+}
+
+.tag-pill.video {
+  color: #ffb29a;
+  border-color: rgba(209, 122, 87, 0.5);
+  background: rgba(209, 122, 87, 0.14);
+}
+
+.tag-pill.instagram {
+  color: #ff9add;
+  border-color: rgba(255, 154, 221, 0.4);
+  background: rgba(255, 154, 221, 0.12);
+}
+
+.tag-pill.facebook {
+  color: #9ebcff;
+  border-color: rgba(158, 188, 255, 0.4);
+  background: rgba(158, 188, 255, 0.12);
+}
+
+.tag-pill.tiktok {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+#noResults {
+  display: none;
+  margin-top: 26px;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+#noResults.show {
+  display: block;
+}
+
+@media (max-width: 850px) {
+  .search-filter-section {
+    grid-template-columns: 1fr;
+  }
+
+  #tacticTitle {
+    text-align: left;
+  }
+
+  #tacticDescription {
+    text-align: left;
+    margin: 0;
+  }
+
+  .tactic-header {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    width: 92vw;
+    padding-top: 28px;
+  }
+
+  #postGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-card img {
+    height: 240px;
+  }
+}

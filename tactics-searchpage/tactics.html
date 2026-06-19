@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Political Post Analysis Tool</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="tactics.css">
+</head>
+
+<body>
+
+  <main class="tool-page">
+
+    <section class="tool-header">
+      <h1> Posting Tactics</h1>
+      <p>Select a tactic to inspect how political posts frame emotion, identity and action.</p>
+    </section>
+
+    <section class="tool-controls">
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Search tactic">
+        <span class="search-icon">⌕</span>
+      </div>
+    </section>
+
+    <section class="tactic-grid" id="tacticGrid"></section>
+
+    <p class="no-results" id="noResults">No tactics match your search.</p>
+
+  </main>
+
+  <script src="tactics.js"></script>
+</body>
+
+</html>

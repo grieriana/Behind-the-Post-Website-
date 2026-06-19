@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post Analysis</title>
+  <link rel="stylesheet" href="analysis.css" />
+</head>
+
+<body>
+  <main class="analysis-page">
+    <a id="back-to-posts" class="back-link" href="../post-searchpage/posts.html">
+      ← Back to posts
+    </a>
+
+    <header class="analysis-header">
+      <h1 id="tactic-title" class="tactic-title">Tactic title</h1>
+      <p id="tactic-description" class="tactic-description">
+        Tactic description
+      </p>
+    </header>
+
+    <section class="analysis-layout">
+      <!-- LEFT PANEL -->
+      <aside class="left-panel">
+        <div class="left-panel-top">
+          <div class="profile-dot"></div>
+
+          <div class="account-meta">
+            <div id="account-name" class="account-name">Account name</div>
+            <div id="post-date" class="post-date">Post date</div>
+          </div>
+        </div>
+
+        <p id="left-main-text" class="left-main-text"></p>
+        <p id="left-hashtags" class="left-hashtags"></p>
+      </aside>
+
+      <!-- CENTRE PANEL -->
+      <section class="centre-panel">
+        <div class="media-wrap">
+          <img id="main-post-image" src="" alt="Post image" />
+
+          <video id="main-post-video" controls loop playsinline>
+            <source id="main-post-video-source" src="" type="video/quicktime" />
+          </video>
+
+          <div id="image-hotspots"></div>
+        </div>
+      </section>
+
+      <!-- RIGHT PANEL -->
+      <aside class="right-panel">
+        <div class="right-stats-bar">
+          <div class="stat-item">
+            <img src="../assets/Interactions/like.png" alt="Likes" />
+            <span id="like-value">0</span>
+          </div>
+
+          <div class="stat-item">
+            <img src="../assets/Interactions/comment.png" alt="Comments" />
+            <span id="comment-value">0</span>
+          </div>
+
+          <div class="stat-item">
+            <img src="../assets/Interactions/share.png" alt="Shares" />
+            <span id="share-value">0</span>
+          </div>
+        </div>
+
+        <h2 class="comments-title">Comments</h2>
+
+        <div class="comment-box">
+          <p id="comment-1-text" class="comment-text"></p>
+          <span id="comment-1-likes" class="comment-likes"></span>
+        </div>
+
+        <div class="comment-box">
+          <p id="comment-2-text" class="comment-text"></p>
+          <span id="comment-2-likes" class="comment-likes"></span>
+        </div>
+
+        <div class="comment-box">
+          <p id="comment-3-text" class="comment-text"></p>
+          <span id="comment-3-likes" class="comment-likes"></span>
+        </div>
+
+        <div id="analysis-tags" class="analysis-tags-bottom"></div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="analysis.js"></script>
+</body>
+</html>

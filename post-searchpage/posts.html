@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posts</title>
+
+  <link rel="stylesheet" href="posts.css" />
+</head>
+
+<body>
+  <main class="page-wrapper">
+
+ <a class="back-link" href="javascript:history.back()">← Back to tactics</a>
+
+    <section class="tactic-header">
+      <h1 id="tacticTitle">Tactic Title</h1>
+      <p id="tacticDescription">Tactic description</p>
+    </section>
+
+    <section class="search-filter-section">
+
+      <div class="search-bar">
+        <input
+          id="postSearchInput"
+          type="text"
+          placeholder="Search posts"
+        />
+        <span class="search-icon">⌕</span>
+      </div>
+
+      <div class="filter-dropdown">
+        <button class="dropdown-button" type="button">
+          Media Type <span>▼</span>
+        </button>
+
+        <div class="dropdown-menu">
+          <label>
+            <input type="checkbox" value="ai-media" />
+            AI Media
+          </label>
+
+          <label>
+            <input type="checkbox" value="real-media" />
+            Real Media
+          </label>
+
+          <label>
+            <input type="checkbox" value="image" />
+            Image
+          </label>
+
+          <label>
+            <input type="checkbox" value="video" />
+            Video
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-dropdown">
+        <button class="dropdown-button" type="button">
+          Platform <span>▼</span>
+        </button>
+
+        <div class="dropdown-menu">
+          <label>
+            <input type="checkbox" value="facebook" />
+            Facebook
+          </label>
+
+          <label>
+            <input type="checkbox" value="instagram" />
+            Instagram
+          </label>
+
+          <label>
+            <input type="checkbox" value="tiktok" />
+            TikTok
+          </label>
+        </div>
+      </div>
+
+    </section>
+
+    <div id="activeFilters"></div>
+
+    <section id="postGrid"></section>
+
+    <p id="noResults">No posts found.</p>
+
+  </main>
+
+  <script src="posts.js"></script>
+</body>
+</html>

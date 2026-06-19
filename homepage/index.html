@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behind the Post</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#" onclick="showPage('home')">
+        Behind the Post
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="javascript:void(0)" class="nav-link active" data-page="home" onclick="showPage('home')">Home</a></li>
+        <li><a href="../tactics-searchpage/tactics.html" class="nav-link">Tactics</a></li>
+        <li><a href="javascript:void(0)" class="nav-link" data-page="resources" onclick="showPage('resources')">Resources</a></li>
+        <li><a href="javascript:void(0)" class="nav-link" data-page="about" onclick="showPage('about')">About</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="#" onclick="showPage('home'); closeMenu()">Home</a></li>
+      <li><a href="../tactics-searchpage/tactics.html">Tactics</a></li>
+      <li><a href="#" onclick="showPage('resources'); closeMenu()">Resources</a></li>
+      <li><a href="#" onclick="showPage('about'); closeMenu()">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME PAGE -->
+  <main id="page-home" class="page active">
+
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="grid-lines"></div>
+        <div class="floating-tag tag1">#Misinformation</div>
+        <div class="floating-tag tag2">#Algorithm</div>
+        <div class="floating-tag tag3">#Astroturfing</div>
+        <div class="floating-tag tag4">#EchoChamber</div>
+        <div class="floating-tag tag5">#ViralManipulation</div>
+      </div>
+
+      <div class="hero-content">
+        <div class="eyebrow">Media Literacy Project</div>
+        <h1 class="hero-title">
+          What's <em>really</em><br />happening
+          <span class="underline-accent">behind the post?</span>
+        </h1>
+
+        <p class="hero-sub">
+          Decoding the hidden tactics used by political parties, brands, and everyday
+          users to shape opinion, manufacture consensus, and game the algorithm.
+        </p>
+
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="window.location.href='../tactics-searchpage/tactics.html'">
+            Explore Tactics
+          </button>
+          <button class="btn-ghost" onclick="showPage('resources')">View Resources</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RESOURCES PAGE -->
+  <div id="page-resources" class="page">
+
+    <section class="res-hero">
+      <div class="container">
+        <div class="eyebrow" style="color:rgba(255,255,255,0.45);">Reading List</div>
+        <h1 class="res-hero-title">Toolkit &amp; Further Reading</h1>
+        <p class="res-hero-sub">
+          Books, papers, essays, tools and podcasts on memes, AI imagery, memetic warfare, and the politics of viral media.
+        </p>
+
+        <div class="res-filters">
+          <button class="res-filter-btn active" onclick="filterResources('all', this)">All</button>
+          <button class="res-filter-btn" onclick="filterResources('memes', this)">Memes &amp; Culture</button>
+          <button class="res-filter-btn" onclick="filterResources('ai', this)">AI &amp; Imagery</button>
+          <button class="res-filter-btn" onclick="filterResources('warfare', this)">Memetic Warfare</button>
+          <button class="res-filter-btn" onclick="filterResources('modern-politics', this)">Modern Politics</button>
+          <button class="res-filter-btn" onclick="filterResources('tools', this)">Tools</button>
+          <button class="res-filter-btn" onclick="filterResources('podcasts', this)">Podcasts</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="res-list-section">
+      <div class="container">
+        <div class="res-grid" id="resGrid">
+
+          <article class="res-card" data-res-category="warfare">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-warfare">Memetic Warfare</span>
+              </div>
+              <h2 class="res-title">The Meme-ification of Warfare</h2>
+              <p class="res-author">Samantha Peacock</p>
+              <p class="res-desc">Memes function like modern-day propaganda posters. They carry strategic, targeted messages intended to manipulate or mislead users.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Paper</span>
+                <a class="res-link" href="https://moritzlaw.osu.edu/sites/default/files/2026-04/Sam%20Peacock%20Blog.pdf" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="memes">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-memes">Memes &amp; Culture</span>
+              </div>
+              <h2 class="res-title">The Function of Memes in Political Discourse</h2>
+              <p class="res-author">Glenn Anderau and Daniel Barbarrusa</p>
+              <p class="res-desc">A paper exploring how memes operate within political discourse and how their form shapes interpretation, participation and meaning.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Paper</span>
+                <a class="res-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11685264/" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2025</span>
+              </div>
+              <h2 class="res-title">Green Party surging as Polanski’s social media strategy woos the young</h2>
+              <p class="res-author">Rachael Healy</p>
+              <p class="res-desc">Green Party membership has more than doubled, driven in part by its platform messaging on apps like TikTok.</p>
+              <div class="res-footer">
+                <span class="res-type">Article</span>
+                <a class="res-link" href="https://observer.co.uk/news/politics/article/green-party-surging-as-polanskis-social-media-strategy-woos-the-young" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="ai">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-ai">AI &amp; Imagery</span>
+              </div>
+              <h2 class="res-title">Memes vs. Machines</h2>
+              <p class="res-author">Alex Petruk</p>
+              <p class="res-desc">A comparison of AI-generated images and traditional memes in right-wing social media discourse.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Reading</span>
+                <a class="res-link" href="https://crossingsjournal.ca/index.php/crossings/article/view/324/119" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="warfare">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-warfare">Memetic Warfare</span>
+                <span class="res-year">2006</span>
+              </div>
+              <h2 class="res-title">In Evolutionary Psychology, Memes and the Origin of War</h2>
+              <p class="res-author">Keith Henson</p>
+              <p class="res-desc">A paper combining evolutionary psychology and memetics to explain war, scarcity and the spread of xenophobic or warlike memes.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Reading</span>
+                <a class="res-link" href="https://mitpress.mit.edu/9780262525435/memes-in-digital-culture/" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="warfare">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-warfare">Memetic Warfare</span>
+                <span class="res-year">2005</span>
+              </div>
+              <h2 class="res-title">Memetics: A Growth Industry in US Military Operations</h2>
+              <p class="res-author">Michael Prosse</p>
+              <p class="res-desc">A paper arguing that future warfare must be fought in ideological spheres, treating cultural ideas as transmittable units.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Paper</span>
+                <a class="res-link" href="https://apps.dtic.mil/sti/pdfs/ADA507172.pdf" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="ai">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-ai">AI &amp; Imagery</span>
+                <span class="res-year">2025</span>
+              </div>
+              <h2 class="res-title">The Resonant Slop Machine</h2>
+              <p class="res-author">Rhys Crilley and Robert A. Saunders</p>
+              <p class="res-desc">Explores generative AI, meme-driven political communication, public diplomacy and strategic narratives.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Paper</span>
+                <a class="res-link" href="https://link.springer.com/article/10.1057/s41254-025-00419-z" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2026</span>
+              </div>
+              <h2 class="res-title">Zack Polanski is Britain’s first digital-native party leader</h2>
+              <p class="res-author">The Economist</p>
+              <p class="res-desc">An article on digital-native political leadership and the role of platform-facing communication strategies.</p>
+              <div class="res-footer">
+                <span class="res-type">Article</span>
+                <a class="res-link" href="https://www.economist.com/britain/2026/04/28/zack-polanski-is-britains-first-digital-native-party-leader" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="memes">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-memes">Memes &amp; Culture</span>
+                <span class="res-year">2021</span>
+              </div>
+              <h2 class="res-title">Messy on the inside: internet memes as mapping tools of everyday life</h2>
+              <p class="res-author">Sulafa Zidani</p>
+              <p class="res-desc">A systematic analysis of memes as tools for reflecting on everyday life, politics, culture and in-group dynamics.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Paper</span>
+                <a class="res-link" href="https://www.tandfonline.com/doi/full/10.1080/1369118X.2021.1974519#abstract" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="warfare">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-warfare">Memetic Warfare</span>
+              </div>
+              <h2 class="res-title">It’s Time to Embrace Memetic Warfare</h2>
+              <p class="res-author">Jeff Giesea</p>
+              <p class="res-desc">A text arguing for memes as a form of political and cultural warfare.</p>
+              <div class="res-footer">
+                <span class="res-type">Academic Reading</span>
+                <a class="res-link" href="https://stratcomcoe.org/cuploads/pfiles/jeff_gisea.pdf" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2024</span>
+              </div>
+              <h2 class="res-title">Media Manipulation &amp; Disinformation Casebook</h2>
+              <p class="res-author">Compiled Resource</p>
+              <p class="res-desc">A curated document cataloguing case studies of media manipulation, disinformation campaigns and coordinated inauthentic behaviour.</p>
+              <div class="res-footer">
+                <span class="res-type">Document</span>
+                <a class="res-link" href="https://drive.google.com/file/d/1NuSQcqgZkj4sToU3EfeFmq1jPC36hU58/view" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2025</span>
+              </div>
+              <h2 class="res-title">Britain's Far Right is Going Mainstream</h2>
+              <p class="res-author">Peter Geoghegan · Democracy for Sale</p>
+              <p class="res-desc">An investigation into how far-right networks are shaping mainstream political discourse.</p>
+              <div class="res-footer">
+                <span class="res-type">Investigative Journalism</span>
+                <a class="res-link" href="https://democracyforsale.substack.com/p/britains-far-right-is-going-mainstream" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2025</span>
+              </div>
+              <h2 class="res-title">AI Slop Is a Brute Force Attack on the Algorithms That Control Reality</h2>
+              <p class="res-author">Jason Koebler · 404 Media</p>
+              <p class="res-desc">Examines how AI-generated slop is used to game recommendation algorithms and reshape what feels real online.</p>
+              <div class="res-footer">
+                <span class="res-type">Article</span>
+                <a class="res-link" href="https://www.404media.co/ai-slop-is-a-brute-force-attack-on-the-algorithms-that-control-reality/" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2026</span>
+              </div>
+              <h2 class="res-title">The Devout Muslim Making a Living from Islamophobic AI Slop</h2>
+              <p class="res-author">The Bureau of Investigative Journalism</p>
+              <p class="res-desc">A case study in how global content farms exploit algorithmic reach to radicalise audiences.</p>
+              <div class="res-footer">
+                <span class="res-type">Investigative Journalism</span>
+                <a class="res-link" href="https://www.thebureauinvestigates.com/stories/2026-05-05/a-devout-muslim-in-pakistan-is-making-a-living-from-islamophobic-ai-slop" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2026</span>
+              </div>
+              <h2 class="res-title">Danny Bones: The AI Rapper Funded by a Far-Right Party</h2>
+              <p class="res-author">The Bureau of Investigative Journalism</p>
+              <p class="res-desc">An investigation into an AI-generated persona used as far-right propaganda dressed as authentic street culture.</p>
+              <div class="res-footer">
+                <span class="res-type">Investigative Journalism</span>
+                <a class="res-link" href="https://www.thebureauinvestigates.com/stories/2026-03-12/danny-bones-meet-the-ai-rapper-funded-by-a-far-right-party" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="modern-politics">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-modern-politics">Modern Politics</span>
+                <span class="res-year">2026</span>
+              </div>
+              <h2 class="res-title">AI-Generated British Schoolgirl Becomes Far-Right Social Media Meme</h2>
+              <p class="res-author">The Guardian</p>
+              <p class="res-desc">A case showing how synthetic imagery can fabricate emotional flashpoints around immigration and national identity.</p>
+              <div class="res-footer">
+                <span class="res-type">Article</span>
+                <a class="res-link" href="https://www.theguardian.com/politics/2026/jan/25/ai-generated-british-schoolgirl-becomes-far-right-social-media-meme" target="_blank" rel="noopener">Read it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="tools">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-tools">Tool</span>
+              </div>
+              <h2 class="res-title">Archive.ph</h2>
+              <p class="res-author">archive.ph</p>
+              <p class="res-desc">A tool for saving snapshots of web pages so they remain accessible even if the original disappears.</p>
+              <div class="res-footer">
+                <span class="res-type">Free Tool</span>
+                <a class="res-link" href="https://archive.ph/" target="_blank" rel="noopener">Use it →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="podcasts">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-podcasts">Podcast</span>
+              </div>
+              <h2 class="res-title">Stage Talks with Bellingcat</h2>
+              <p class="res-author">Bellingcat</p>
+              <p class="res-desc">Live discussions on open-source research, investigations, disinformation and online extremism.</p>
+              <div class="res-footer">
+                <span class="res-type">Podcast</span>
+                <a class="res-link" href="https://rss.com/podcasts/bellingcatstagetalk/" target="_blank" rel="noopener">Listen →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="res-card" data-res-category="podcasts">
+            <div class="res-card-inner">
+              <div class="res-meta">
+                <span class="res-tag tag-podcasts">Podcast</span>
+              </div>
+              <h2 class="res-title">The 404 Media Podcast</h2>
+              <p class="res-author">404 Media</p>
+              <p class="res-desc">A podcast about AI, surveillance, platform politics and the internet’s underbelly.</p>
+              <div class="res-footer">
+                <span class="res-type">Podcast</span>
+                <a class="res-link" href="https://www.404media.co/the-404-media-podcast/" target="_blank" rel="noopener">Listen →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="page-about" class="page">
+    <section style="background:#1c1917; padding: calc(var(--nav-h) + 80px) 0 80px;">
+      <div class="container" style="max-width: 720px;">
+        <p style="font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:20px;">About</p>
+
+        <h1 style="font-size:clamp(2rem,5vw,3.2rem); font-weight:900; color:#ffffff; line-height:1.1; margin-bottom:56px;">
+          Why this <em style="font-style:italic; color:var(--yellow);">exists</em>
+        </h1>
+
+        <p style="font-size:1.05rem; line-height:1.85; color:rgba(255,255,255,0.72); margin-bottom:32px;">
+          Social media acts as a host to an unprecedented rate of decontextualised images where the lines between fact and fiction are distorted, often underscored by motivations to push messages into the public consciousness in a targeted way.
+        </p>
+
+        <p style="font-size:1.05rem; line-height:1.85; color:rgba(255,255,255,0.72); margin-bottom:32px;">
+          Born out of an urgent concern for how technology intersects with an increasingly dangerous and polarising sociopolitical climate, this taxonomy to read audiovisual content on social media sites has intentions of restoring the public's power through improving political literacy.
+        </p>
+
+        <p style="font-size:1.05rem; line-height:1.85; color:rgba(255,255,255,0.72);">
+          Due to the rapidly evolving nature of social media platforms and crosscultural technologies we emphasise this to be an ongoing pursuit of awareness of the new languages driving both mundane, insidious propaganda as well as overt extremism, so we hope that these image analyses and external resources empower the viewer to read further into the potent narratives constructed within a mindless scroll, to inform how we all act in the real world.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>
